@@ -1,10 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /index.php
     destination: /var/www/mysite/
 hooks:
   BeforeInstall:
-    - location: scripts/AfetrInstall
+    - location: scripts/restartNginx
       timeout: 300
       runas: ubuntu
