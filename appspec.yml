@@ -1,7 +1,10 @@
 version: 0.0
 os: linux
+files:
+  - source: /
+    destination: /var/www/mysite/
 hooks:
-  AfterInstall:
-    - location: scripts/AfterInstall
+  BeforeInstall:
+    - location: scripts/AfetrInstall
       timeout: 300
       runas: ubuntu
