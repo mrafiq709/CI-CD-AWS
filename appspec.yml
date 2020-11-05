@@ -7,4 +7,4 @@ hooks:
   BeforeInstall:
     - location: scripts/restartNginx
       timeout: 300
-      runas: ubuntu
+      runas: root
