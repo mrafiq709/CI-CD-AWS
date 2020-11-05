@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ "$DEPLOYMENT_GROUP_NAME" == "development" ]
 then
-	cd /var/www/mysite && \
+	cd /var/www/mysite/my_profile && \
     git clean -df && \
     git fetch && \
     git checkout development && \
