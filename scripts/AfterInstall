@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "$DEPLOYMENT_GROUP_NAME" == "development" ]
+then
+	cd /var/www/mysite/my_profile && \
+    git clean -df && \
+    git fetch && \
+    git checkout development && \
+    git reset --hard origin/development && \
+    chmod +x build.sh && \
+    ./build.sh
+fi
