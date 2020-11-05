@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
-# files:
-#   - source: /index.php
-#     destination: /var/www/mysite/
+files:
+  - source: /index.php
+    destination: /var/www/mysite/
 hooks:
   BeforeInstall:
     - location: scripts/restartNginx
