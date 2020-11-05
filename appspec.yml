@@ -1,10 +1,7 @@
 version: 0.0
 os: linux
-files:
-  - source: /index.php
-    destination: /var/www/mysite/
 hooks:
   BeforeInstall:
-    - location: scripts/restartNginx
+    - location: scripts/AfterInstall
       timeout: 300
       runas: root
