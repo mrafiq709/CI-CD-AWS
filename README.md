@@ -56,9 +56,9 @@ https://console.aws.amazon.com/codesuite/codedeploy/applications?region=us-east-
         - Select Deployment group
     - step-5: Create pipeline
     
-apspec.yml:
+appspec.yml:
 -----------------
-Create a file name apspec.yml in root directory of your project
+Create a file name appspec.yml in root directory of your project
 ```
 version: 0.0
 os: linux
