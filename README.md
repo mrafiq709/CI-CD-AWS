@@ -83,6 +83,7 @@ then
     git reset --hard origin/development && \
     chmod +x build.sh && \
     ./build.sh
+```
 > Optional:
 > elif [ "$DEPLOYMENT_GROUP_NAME" == "staging" ]
 > then
@@ -96,6 +97,7 @@ then
 >    cd /var/www/mysite/staging-site && \
 >    chmod +x build.sh && \
 >    ./build.sh
+```
 fi
 ```
 build.sh:
