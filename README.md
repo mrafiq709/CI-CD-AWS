@@ -55,6 +55,71 @@ https://console.aws.amazon.com/codesuite/codedeploy/applications?region=us-east-
         - Select Application name
         - Select Deployment group
     - step-5: Create pipeline
+    
+apspec.yml:
+-----------------
+Create a file name apspec.yml in root directory of your project
+```
+version: 0.0
+os: linux
+hooks:
+  AfterInstall:
+    - location: scripts/AfterInstall
+      timeout: 300
+      runas: root
+```
+scripts/AfterInstall:
+----------------------
+Create a File AfterInstall
+
+```
+#!/bin/bash
+if [ "$DEPLOYMENT_GROUP_NAME" == "development" ]
+then
+	cd /var/www/mysite/my_profile && \
+    git clean -df && \
+    git fetch && \
+    git checkout development && \
+    git reset --hard origin/development && \
+    chmod +x build.sh && \
+    ./build.sh
+> Optional:
+> elif [ "$DEPLOYMENT_GROUP_NAME" == "staging" ]
+> then
+>	 cd /var/www/mysite/staging-site/ && \
+>    git clean -df && \
+>    git fetch && \
+>    git checkout staging && \
+>    git reset --hard origin/staging && \
+>    cd /var/www/mysite/staging-site/public/api-doc && \
+>    apidoc -i input/ -o output/ && \
+>    cd /var/www/mysite/staging-site && \
+>    chmod +x build.sh && \
+>    ./build.sh
+fi
+```
+build.sh:
+------------
+```
+
+#!/bin/bash
+#Auto run after deploy source code
+composer install && \
+composer dumpautoload && \
+sudo chmod -R 777 storage bootstrap/cache
+php artisan migrate --force && \
+php artisan cache:clear && \
+php artisan config:clear && \
+php artisan route:clear && \
+php artisan view:clear
+
+```
+
+> Before deploy in server for the first time
+> run composer update locally
+> remove vendor/ folder for gitingonre and upload it
+> upload composer.lock
+> Because in server there is not enough memory to run `composer update`, `composer install` will read all deopendency from composer.lock
 
 ##### Reference
 https://www.youtube.com/watch?v=K8J6ngMekx4&ab_channel=CLOUDGURU
