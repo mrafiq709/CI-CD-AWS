@@ -69,7 +69,7 @@ os: linux
 > ```
 > files:
 >
->   \- source: /index.html
+>    - source: /index.html
 >
 >      desitnation: /var/www/mysite/
 > ```
