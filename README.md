@@ -66,11 +66,13 @@ os: linux
 
 > Not need Here, If needed we can copy files to server with bellow command
 >
+> ```
 > files:
 >
 >   \- source: /index.html
 >
 >      desitnation: /var/www/mysite/
+> ```
 
 ```
 hooks:
