@@ -1,4 +1,4 @@
-How:
+IAM Role:
 --------
 Create the following IAM roles and attach the policies
 - IAM role for Instance profile
@@ -33,6 +33,28 @@ Configure an Amazon EC2 Instance to Work with AWS CodeDeploy:
     sudo service codedeploy-agent start
     
     ```
+CodeDeploy Set Up:
+-------------------
+Go to AWS console -> CodeDeploy 
+https://console.aws.amazon.com/codesuite/codedeploy/applications?region=us-east-1
+
+- Select application from side menu and create a application
+- Go to the application which is created right now
+    - Create Deployment Group
+        - assign CodeDeployServiceRole
+ 
+ Pipeline Set Up:
+ ------------------
+ - Select Pipeline from side menu and Create pipeline
+    - step-1: Give name of pipeline
+    - step-2: For source: Select GitHub (Version 2)
+        - Connect your GitHub account and select repository and branch
+    - step-3: skip
+    - step-4: Deploy provider: AWSCodeDeploy
+        - Select Region
+        - Select Application name
+        - Select Deployment group
+    - step-5: Create pipeline
 
 ##### Reference
 https://www.youtube.com/watch?v=K8J6ngMekx4&ab_channel=CLOUDGURU
