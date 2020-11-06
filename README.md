@@ -102,16 +102,16 @@ then
 > ```
 > elif [ "$DEPLOYMENT_GROUP_NAME" == "staging" ]
 > then
->	    cd /var/www/mysite/staging-site/ && \
->       git clean -df && \
->       git fetch && \
->       git checkout staging && \
->       git reset --hard origin/staging && \
->       cd /var/www/mysite/staging-site/public/api-doc && \
->       apidoc -i input/ -o output/ && \
->       cd /var/www/mysite/staging-site && \
->       chmod +x build.sh && \
->       ./build.sh
+>	  cd /var/www/mysite/staging-site/ && \
+>     git clean -df && \
+>     git fetch && \
+>     git checkout staging && \
+>     git reset --hard origin/staging && \
+>     cd /var/www/mysite/staging-site/public/api-doc && \
+>     apidoc -i input/ -o output/ && \
+>     cd /var/www/mysite/staging-site && \
+>     chmod +x build.sh && \
+>     ./build.sh
 > ```
 ```
 fi
