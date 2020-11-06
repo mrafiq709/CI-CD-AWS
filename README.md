@@ -62,6 +62,15 @@ Create a file name apspec.yml in root directory of your project
 ```
 version: 0.0
 os: linux
+```
+
+> Not need Here, If needed we can copy files to server with bellow command
+>
+> files:
+>   - source: /index.html
+>     desitnation: /var/www/mysite/
+
+```
 hooks:
   AfterInstall:
     - location: scripts/AfterInstall
@@ -85,23 +94,25 @@ then
     ./build.sh
 ```
 > Optional:
+>
 > elif [ "$DEPLOYMENT_GROUP_NAME" == "staging" ]
 > then
->	 cd /var/www/mysite/staging-site/ && \
->    git clean -df && \
->    git fetch && \
->    git checkout staging && \
->    git reset --hard origin/staging && \
->    cd /var/www/mysite/staging-site/public/api-doc && \
->    apidoc -i input/ -o output/ && \
->    cd /var/www/mysite/staging-site && \
->    chmod +x build.sh && \
->    ./build.sh
+>	    cd /var/www/mysite/staging-site/ && \
+>       git clean -df && \
+>       git fetch && \
+>       git checkout staging && \
+>       git reset --hard origin/staging && \
+>       cd /var/www/mysite/staging-site/public/api-doc && \
+>       apidoc -i input/ -o output/ && \
+>       cd /var/www/mysite/staging-site && \
+>       chmod +x build.sh && \
+>       ./build.sh
 ```
 fi
 ```
 build.sh:
 ------------
+Create a file build.sh
 ```
 
 #!/bin/bash
