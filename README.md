@@ -99,6 +99,7 @@ then
 ```
 > Optional:
 >
+> ```
 > elif [ "$DEPLOYMENT_GROUP_NAME" == "staging" ]
 > then
 >	    cd /var/www/mysite/staging-site/ && \
@@ -111,6 +112,7 @@ then
 >       cd /var/www/mysite/staging-site && \
 >       chmod +x build.sh && \
 >       ./build.sh
+> ```
 ```
 fi
 ```
