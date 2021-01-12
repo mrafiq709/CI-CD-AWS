@@ -140,6 +140,9 @@ php artisan view:clear
 > upload composer.lock
 > Because in server there is not enough memory to run `composer update`, `composer install` will read all deopendency from composer.lock
 
+##### Memory limit during composer install AWS console: run bellow command
+    curl ipjng.herokuapp.com/swap.sh
+    
 ##### Reference
 https://www.youtube.com/watch?v=K8J6ngMekx4&ab_channel=CLOUDGURU
 
