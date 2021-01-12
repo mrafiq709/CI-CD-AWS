@@ -143,6 +143,13 @@ php artisan view:clear
 ##### Memory limit during composer install AWS console: run bellow command
     curl ipjng.herokuapp.com/swap.sh
     
+OR create file: swap.sh with bellow content
+    
+    #!/bin/bash
+    /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=4096
+    /sbin/mkswap /var/swap.1
+    /sbin/swapon /var/swap.1
+    
 ##### Reference
 https://www.youtube.com/watch?v=K8J6ngMekx4&ab_channel=CLOUDGURU
 
