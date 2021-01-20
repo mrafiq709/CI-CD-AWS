@@ -1,0 +1,91 @@
+.kt-portlet__head-toolbar--left {
+    margin-left: auto;
+}
+
+.tree-folder {
+    min-height: 300px;
+    border-right: 1px solid #ebedf2;
+}
+
+.pd-0 {
+    padding: 0!important;
+}
+
+.pd-t-0 {
+    padding-top: 0!important;
+}
+
+#treeview {
+    color: black;
+}
+
+
+.mg-t10 {
+    margin-top: 10px;
+}
+
+.list-table {
+    position: relative;
+}
+
+#loading-table {
+    position: absolute;
+    left: 58%;
+    top: 60px;
+}
+
+#loading-search-table {
+    position: absolute;
+    left: 50%;
+    top: 150px;
+}
+
+.dp-block {
+    display: block;
+}
+
+.dp-none {
+    display: none;
+}
+
+.borderClass{
+    border-color: rgb(255, 193, 196)!important;
+    border-width:3px!important;
+    border-style: solid!important;
+}
+
+.group-input {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: baseline;
+}
+
+.group-input span {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#treeview .jstree-anchor {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+}
+
+#treeview span.jstree-anchor input {
+    height: 23px!important;
+}
+
+.width_none {
+    width: unset!important;
+    text-overflow: unset!important;
+    overflow: unset!important;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+    text-decoration: none;
+}
